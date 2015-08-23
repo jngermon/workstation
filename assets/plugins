@@ -1,2 +1,3 @@
 php=https://github.com/jngermon/workstation-php.git
 docker=https://github.com/jngermon/workstation-docker.git
+zsh=https://github.com/jngermon/workstation-zsh.git
