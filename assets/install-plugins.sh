@@ -15,7 +15,7 @@ function main {
 		exit
 	fi
 
-	if [ ! $lines ]; then
+	if [ "$lines" = "" -o "$lines" = "all" ]; then
 		lines=$(getAllPluginsIndexes)
 	fi
 
@@ -68,12 +68,12 @@ function installPlugin {
 	local dir=$1
 	local url=$2
 	if [ ! $url ]; then
-		exit
+		return false
 	fi
 
 	if $(isPluginAlreadyInstalled $dir); then
 		echo "Skip : This plugin is already installed"
-		exit
+		return false
 	fi
 
 	echo "Install $url with index $dir"
@@ -84,7 +84,11 @@ function installPlugin {
 
 	git clone $url $dir
 
-	cd ..
+	cd $dir
+
+	make
+
+	cd ../..
 }
 
 function isPluginAlreadyInstalled {
