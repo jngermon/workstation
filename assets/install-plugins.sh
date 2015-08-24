@@ -68,12 +68,12 @@ function installPlugin {
 	local dir=$1
 	local url=$2
 	if [ ! $url ]; then
-		return false
+		return 0
 	fi
 
 	if $(isPluginAlreadyInstalled $dir); then
 		echo "Skip : This plugin is already installed"
-		return false
+		return 0
 	fi
 
 	echo "Install $url with index $dir"
