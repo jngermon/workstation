@@ -9,15 +9,7 @@ else
     sudo apt-get install git-core
 fi
 
-GITCONFIG="$(pwd)/config/.gitconfig"
-
-if [ ! -f ~/.gitconfig ] || [ ! -h ~/.gitconfig ]; then
-    echo "Create symbolik link form ~/.gitconfig to $GITCONFIG"
-
-    ln --symbolic --force $GITCONFIG ~/.gitconfig
-fi
-
-SSH_FILE=~/.ssh/id_rsb
+SSH_FILE=~/.ssh/id_rsa
 
 if [ ! -e $SSH_FILE ]; then
     read -p "The file $SSH_FILE doesn't exist, do you want to create one ? (Y/n) : " SSH_OK

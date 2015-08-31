@@ -1,7 +1,0 @@
-[user]
-	name = jngermon
-	email = jn.germon@gmail.com
-[core]
-	editor = vim
-[push]
-	default = simple
