@@ -72,7 +72,7 @@ function installPlugin {
 	fi
 
 	if $(isPluginAlreadyInstalled $dir); then
-		echo "Skip : This plugin is already installed"
+		echo "Skip : '$dir' This plugin is already installed"
 		return 0
 	fi
 
