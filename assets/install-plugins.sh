@@ -19,10 +19,12 @@ function main {
 		lines=$(getAllPluginsIndexes)
 	fi
 
+        read -p "would you like to just load plugins ? (Y/n)" just_load
+
 	for id in $lines
 	do
 		local repo=$(getPluginUrl $id)
-		installPlugin $id $repo
+		installPlugin $id $repo $just_load
 	done
 }
 
@@ -67,6 +69,7 @@ function getAllPluginsIndexes {
 function installPlugin {
 	local dir=$1
 	local url=$2
+	local just_load=$3
 	if [ ! $url ]; then
 		return 0
 	fi
@@ -80,15 +83,19 @@ function installPlugin {
 
 	mkdir -p $VENDOR_DIR
 
+	local p=$(pwd)
+
 	cd $VENDOR_DIR
 
 	git clone $url $dir
 
 	cd $dir
 
-	make
+        if [ "$just_load" = "n" ]; then
+		make
+        fi
 
-	cd ../..
+	cd $p
 }
 
 function isPluginAlreadyInstalled {
