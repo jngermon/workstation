@@ -1,4 +1,4 @@
-php=git@github.com:jngermon/workstation-php.git
-docker=git@github.com:jngermon/workstation-docker.git
-zsh=git@github.com:jngermon/workstation-zsh.git
-dotfiles=git@github.com:jngermon/workstation-dotfiles.git
+workstation-php=git@github.com:jngermon/workstation-php.git
+workstation-docker=git@github.com:jngermon/workstation-docker.git
+workstation-zsh=git@github.com:jngermon/workstation-zsh.git
+workstation-dotfiles=git@github.com:jngermon/workstation-dotfiles.git
