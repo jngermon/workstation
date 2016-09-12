@@ -1,6 +1,6 @@
 #!/bin/bash
 PLUGINS_FILE=assets/plugins
-VENDOR_DIR=vendor
+VENDOR_DIR=..
 
 function main {
 	echo "Plugin installation"
